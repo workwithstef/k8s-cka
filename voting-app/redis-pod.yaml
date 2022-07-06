@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: voting-db
+  labels:
+    name: db
+    type: redis
+spec: 
+  containers:
+    - name: voting-db-container
+      image: redis
+      ports:
+        - containerPort: 6379
+

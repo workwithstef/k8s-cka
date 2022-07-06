@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myapp-service
+spec:
+  type: NodePort            # Node Port service type
+  ports:                    # takes a list of ports
+    - port: 80    
+      targetPort: 80
+      nodePort: 30027
+  selector:                 # to select the target pod using its label
+    app: myapp
